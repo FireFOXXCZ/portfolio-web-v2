@@ -323,6 +323,24 @@ function SectionLabel({ text }: { text: string }) {
   );
 }
 
+// ─── Age calculation ────────────────────────────────────────────────────────
+const BIRTH_DATE = new Date(2004, 11, 23); // 23. 12. 2004 (měsíce jsou 0-indexované)
+const EXPERIENCE_START_DATE = new Date(2021, 11, 23); // od 17 let (23. 12. 2021)
+
+function getAge(birthDate: Date): number {
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const hasHadBirthdayThisYear =
+    today.getMonth() > birthDate.getMonth() ||
+    (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+  if (!hasHadBirthdayThisYear) age--;
+  return age;
+}
+
+function getYearsSince(startDate: Date): number {
+  return getAge(startDate);
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function AboutPage() {
   const t = useTranslations("about");
@@ -431,8 +449,8 @@ export default function AboutPage() {
           {/* Stats */}
           <div className="flex flex-wrap gap-9">
             {[
-              { num: "20", label: t("stats.age") },
-              { num: "4+", label: t("stats.years") },
+              { num: String(getAge(BIRTH_DATE)), label: t("stats.age") },
+              { num: `${getYearsSince(EXPERIENCE_START_DATE)}+`, label: t("stats.years") },
               { num: "∞",  label: t("stats.passion") },
             ].map((s) => (
               <div key={s.label} className="group">
