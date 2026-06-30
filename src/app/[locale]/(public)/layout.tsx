@@ -36,7 +36,24 @@ async function getProfile() {
   }
 }
 
+async function getProjectCount() {
+  try {
+    const anon = createAnonClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    )
+    const { count, error } = await anon
+      .from('projects')
+      .select('*', { count: 'exact', head: true })
+
+    if (error) return 0
+    return count ?? 0
+  } catch {
+    return 0
+  }
+}
+
 export default async function PublicLayout({ children }: { children: React.ReactNode }) {
-  const profile = await getProfile()
-  return <SiteChrome profile={profile}>{children}</SiteChrome>
+  const [profile, projectCount] = await Promise.all([getProfile(), getProjectCount()])
+  return <SiteChrome profile={profile} projectCount={projectCount}>{children}</SiteChrome>
 }

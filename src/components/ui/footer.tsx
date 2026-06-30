@@ -36,6 +36,19 @@ function DiscordIcon({ size = 14 }: { size?: number }) {
 
 const TECH_STACK = ['Next.js', 'TypeScript', 'Supabase', 'Tailwind', 'React', 'PostgreSQL']
 
+// ── Roky zkušeností (od 17 let, narozen 23. 12. 2004) ──────────────────────
+const EXPERIENCE_START_DATE = new Date(2021, 11, 23) // 23. 12. 2021
+
+function getYearsSince(startDate: Date): number {
+  const today = new Date()
+  let years = today.getFullYear() - startDate.getFullYear()
+  const hasHadAnniversaryThisYear =
+    today.getMonth() > startDate.getMonth() ||
+    (today.getMonth() === startDate.getMonth() && today.getDate() >= startDate.getDate())
+  if (!hasHadAnniversaryThisYear) years--
+  return years
+}
+
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null)
   const [inView, setInView] = useState(false)
@@ -72,9 +85,10 @@ type SocialLink = {
 
 interface FooterProps {
   profile?: Profile | null
+  projectCount?: number
 }
 
-export function Footer({ profile }: FooterProps) {
+export function Footer({ profile, projectCount = 0 }: FooterProps) {
   const t = useTranslations('footer')
   const tNav = useTranslations('nav')
   const { ref, inView } = useInView()
@@ -185,12 +199,12 @@ export function Footer({ profile }: FooterProps) {
             {/* Mini stats row */}
             <div className="flex items-center gap-6 pt-1">
               <div className="flex flex-col">
-                <span className="text-base font-bold text-gray-800 dark:text-gray-200">3+</span>
+                <span className="text-base font-bold text-gray-800 dark:text-gray-200">{getYearsSince(EXPERIENCE_START_DATE)}+</span>
                 <span className="text-[11px] text-gray-400 dark:text-gray-600">{t('yearsExp')}</span>
               </div>
               <div className="w-px h-8 bg-gray-100 dark:bg-white/[0.06]" />
               <div className="flex flex-col">
-                <span className="text-base font-bold text-gray-800 dark:text-gray-200">20+</span>
+                <span className="text-base font-bold text-gray-800 dark:text-gray-200">{projectCount > 0 ? `${projectCount}+` : '—'}</span>
                 <span className="text-[11px] text-gray-400 dark:text-gray-600">{t('projects')}</span>
               </div>
               <div className="w-px h-8 bg-gray-100 dark:bg-white/[0.06]" />

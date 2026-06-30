@@ -17,14 +17,15 @@ type SiteChromeProfile = {
 interface SiteChromeProps {
   children: React.ReactNode
   profile?: SiteChromeProfile | null
+  projectCount?: number
 }
 
-export function SiteChrome({ children, profile }: SiteChromeProps) {
+export function SiteChrome({ children, profile, projectCount = 0 }: SiteChromeProps) {
   return (
     <>
       <Navbar profile={profile} />
       <div className="pt-16">{children}</div>
-      <Footer profile={profile} />
+      <Footer profile={profile} projectCount={projectCount} />
     </>
   )
 }
