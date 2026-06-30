@@ -130,11 +130,12 @@ function FlipCard({
         onMouseLeave={() => setTilt({ x: 0, y: 0 })}
         role="button"
         aria-pressed={open}
-        className="group relative h-[148px] cursor-pointer overflow-hidden rounded-xl border bg-white dark:bg-[#0b0b0b] [transform-style:preserve-3d]"
+        className={`group relative h-[148px] cursor-pointer overflow-hidden rounded-xl border bg-white dark:bg-[#0b0b0b] [transform-style:preserve-3d] transition-colors duration-200 ${
+          open
+            ? "border-orange-500/55"
+            : "border-neutral-200 dark:border-white/[0.07]"
+        }`}
         style={{
-          borderColor: open
-            ? "rgba(249,115,22,0.55)"
-            : "rgba(255,255,255,0.07)",
           transform: `perspective(800px) rotateX(${tilt.x}deg) rotateY(${tilt.y}deg)`,
           transition: "transform 0.14s ease-out, border-color 0.25s ease, box-shadow 0.3s ease",
           boxShadow: open
@@ -155,7 +156,7 @@ function FlipCard({
         />
 
         {/* Top bar */}
-        <div className="relative z-10 flex items-center justify-between border-b border-white/[0.06] px-3 py-2">
+        <div className="relative z-10 flex items-center justify-between border-b border-black/[0.06] dark:border-white/[0.06] px-3 py-2">
           <span className="font-mono text-[10px] font-semibold tracking-wider text-neutral-600">
             fact<span className="text-orange-500/70">.{num}</span>
           </span>
@@ -193,7 +194,7 @@ function FlipCard({
 
           {/* Text layer — iris reveal + scramble */}
           <div
-            className="absolute inset-0 flex items-center justify-center bg-[#0f0f0f] px-4 py-3 text-center"
+            className="absolute inset-0 flex items-center justify-center bg-neutral-50 dark:bg-[#0f0f0f] px-4 py-3 text-center"
             style={{
               clipPath: open
                 ? `circle(150% at ${origin.x}% ${origin.y}%)`
@@ -204,7 +205,7 @@ function FlipCard({
             {/* Subtle orange tint behind text */}
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-orange-500/[0.07] to-transparent" />
             <p
-              className="relative font-mono text-[11.5px] font-medium leading-relaxed text-neutral-200"
+              className="relative font-mono text-[11.5px] font-medium leading-relaxed text-neutral-800 dark:text-neutral-200"
               style={{
                 opacity: open ? 1 : 0,
                 transition: "opacity 0.2s ease 0.1s",
@@ -279,7 +280,7 @@ function TimelineItem({
           className={`relative flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full border text-[10px] font-bold tracking-wide transition-all duration-300 ${
             accent
               ? "border-orange-500 bg-orange-500/10 text-orange-500 shadow-[0_0_18px_-4px_rgba(249,115,22,0.45)]"
-              : "border-neutral-800 bg-neutral-950 text-neutral-600 group-hover:border-neutral-700"
+              : "border-neutral-300 dark:border-neutral-800 bg-neutral-100 dark:bg-neutral-950 text-neutral-500 dark:text-neutral-600 group-hover:border-neutral-400 dark:group-hover:border-neutral-700"
           }`}
         >
           {accent && (
@@ -288,21 +289,21 @@ function TimelineItem({
           <span className="relative">{year.slice(2)}</span>
         </div>
         {!isLast && (
-          <div className="my-1 w-px flex-1 bg-gradient-to-b from-neutral-800 via-neutral-900 to-transparent" />
+          <div className="my-1 w-px flex-1 bg-gradient-to-b from-neutral-300 dark:from-neutral-800 via-neutral-200 dark:via-neutral-900 to-transparent" />
         )}
       </div>
       <div className={isLast ? "pb-1 pt-1" : "pb-10 pt-1"}>
         <span
           className={`font-mono text-[10px] font-semibold tracking-widest ${
-            accent ? "text-orange-500" : "text-neutral-700"
+            accent ? "text-orange-500" : "text-neutral-500 dark:text-neutral-700"
           }`}
         >
           {year}
         </span>
-        <div className="mb-1.5 mt-1 text-[15px] font-semibold text-neutral-100">
+        <div className="mb-1.5 mt-1 text-[15px] font-semibold text-neutral-900 dark:text-neutral-100">
           {title}
         </div>
-        <div className="max-w-[440px] text-[13px] leading-relaxed text-neutral-500">
+        <div className="max-w-[440px] text-[13px] leading-relaxed text-neutral-600 dark:text-neutral-500">
           {desc}
         </div>
       </div>
@@ -314,10 +315,10 @@ function TimelineItem({
 function SectionLabel({ text }: { text: string }) {
   return (
     <div className="mb-5 flex items-center gap-3">
-      <span className="font-mono text-[10px] font-semibold tracking-[0.2em] text-neutral-700">
+      <span className="font-mono text-[10px] font-semibold tracking-[0.2em] text-neutral-500 dark:text-neutral-700">
         {text}
       </span>
-      <span className="h-px flex-1 bg-gradient-to-r from-neutral-800 to-transparent" />
+      <span className="h-px flex-1 bg-gradient-to-r from-neutral-300 dark:from-neutral-800 to-transparent" />
     </div>
   );
 }
@@ -357,7 +358,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <main className="relative min-h-screen bg-[#070707] font-sans text-neutral-100">
+    <main className="relative min-h-screen bg-white dark:bg-[#070707] font-sans text-neutral-900 dark:text-neutral-100">
       {/* Dot-grid texture */}
       <div
         aria-hidden
@@ -384,7 +385,7 @@ export default function AboutPage() {
         <section className="mb-24">
           {/* Status badge */}
           <div className="mb-9">
-            <span className="inline-flex items-center gap-2 rounded-full border border-violet-500/20 bg-violet-500/[0.07] px-3.5 py-1.5 font-mono text-[11px] text-violet-300">
+            <span className="inline-flex items-center gap-2 rounded-full border border-violet-500/30 dark:border-violet-500/20 bg-violet-500/10 dark:bg-violet-500/[0.07] px-3.5 py-1.5 font-mono text-[11px] text-violet-700 dark:text-violet-300">
               <span className="relative flex h-1.5 w-1.5">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet-500 opacity-75" />
                 <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-violet-500" />
@@ -394,7 +395,7 @@ export default function AboutPage() {
           </div>
 
           {/* Greeting */}
-          <p className="mb-3 font-mono text-[11px] font-semibold tracking-[0.22em] text-neutral-700">
+          <p className="mb-3 font-mono text-[11px] font-semibold tracking-[0.22em] text-neutral-500 dark:text-neutral-700">
             {t("greeting")}
           </p>
 
@@ -406,7 +407,7 @@ export default function AboutPage() {
                 className={`inline-block text-[clamp(52px,10.5vw,84px)] font-extrabold leading-[0.9] tracking-tight transition-all duration-500 ${
                   i >= 4
                     ? "bg-gradient-to-br from-orange-400 via-orange-500 to-red-500 bg-clip-text text-transparent"
-                    : "text-neutral-50"
+                    : "text-neutral-900 dark:text-neutral-50"
                 }`}
                 style={{
                   opacity: letterVisible ? 1 : 0,
@@ -423,7 +424,7 @@ export default function AboutPage() {
           </div>
 
           {/* Bio */}
-          <p className="mb-9 max-w-[520px] text-[16px] leading-[1.75] text-neutral-400">
+          <p className="mb-9 max-w-[520px] text-[16px] leading-[1.75] text-neutral-600 dark:text-neutral-400">
             {t("bio")}
           </p>
 
@@ -438,7 +439,7 @@ export default function AboutPage() {
                 <div className="bg-gradient-to-br from-orange-400 to-orange-600 bg-clip-text text-[26px] font-bold leading-none text-transparent transition-transform duration-200 group-hover:scale-105">
                   {s.num}
                 </div>
-                <div className="mt-1.5 font-mono text-[10px] tracking-wider text-neutral-700">
+                <div className="mt-1.5 font-mono text-[10px] tracking-wider text-neutral-500 dark:text-neutral-700">
                   {s.label}
                 </div>
               </div>
@@ -449,7 +450,7 @@ export default function AboutPage() {
         {/* ── FUN FACTS ── */}
         <section className="mb-24">
           <SectionLabel text={t("factsLabel")} />
-          <p className="-mt-2 mb-6 text-[13px] text-neutral-500">
+          <p className="-mt-2 mb-6 text-[13px] text-neutral-600 dark:text-neutral-500">
             {t("factsHint")}
           </p>
           <div className="grid grid-cols-3 gap-2.5">
@@ -462,7 +463,7 @@ export default function AboutPage() {
         {/* ── TIMELINE ── */}
         <section className="mb-24">
           <SectionLabel text={t("timelineLabel")} />
-          <p className="-mt-2 mb-9 text-[13px] text-neutral-600">
+          <p className="-mt-2 mb-9 text-[13px] text-neutral-700 dark:text-neutral-600">
             {t("timelineHint")}
           </p>
           {timeline.map((item, i) => (
