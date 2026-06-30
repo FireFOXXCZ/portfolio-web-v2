@@ -93,6 +93,36 @@ function LiveClock() {
 // ---------------------------------------------------------------------------
 const DEV_FALLBACK = { lat: 49.298, lon: 16.529, city: 'Kuřim', country: 'CZ' }
 
+// Přesná poloha z prohlížeče (GPS/Wi-Fi) — uživatel musí povolit
+function getBrowserLocation(): Promise<{ lat: number; lon: number } | null> {
+  return new Promise((resolve) => {
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
+      resolve(null)
+      return
+    }
+    navigator.geolocation.getCurrentPosition(
+      (pos) => resolve({ lat: pos.coords.latitude, lon: pos.coords.longitude }),
+      () => resolve(null), // uživatel zamítl / chyba / timeout
+      { enableHighAccuracy: false, timeout: 8000, maximumAge: 10 * 60 * 1000 }
+    )
+  })
+}
+
+// Z lat/lon zjistí název města (reverse geocoding) — bez API klíče
+async function reverseGeocode(lat: number, lon: number): Promise<{ city: string; country: string } | null> {
+  try {
+    const res = await fetch(`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=cs`)
+    if (!res.ok) return null
+    const d = await res.json()
+    const city = d.city || d.locality || d.principalSubdivision || ''
+    const country = d.countryCode || ''
+    if (!city) return null
+    return { city, country }
+  } catch {
+    return null
+  }
+}
+
 async function getGeoByIP(): Promise<{ lat: number; lon: number; city: string; country: string }> {
   try {
     const res = await fetch('https://ipapi.co/json/')
@@ -131,7 +161,21 @@ function WeatherBadge() {
   const load = useCallback(async () => {
     try {
       if (!geoCache.current) {
-        geoCache.current = await getGeoByIP()
+        // 1) Zkusíme přesnou polohu z prohlížeče (GPS/Wi-Fi)
+        const browserPos = await getBrowserLocation()
+        if (browserPos) {
+          const place = await reverseGeocode(browserPos.lat, browserPos.lon)
+          geoCache.current = {
+            lat: browserPos.lat,
+            lon: browserPos.lon,
+            city: place?.city ?? '',
+            country: place?.country ?? '',
+          }
+        }
+        // 2) Fallback na IP geolokaci, pokud prohlížeč nepovolil / selhal
+        if (!geoCache.current) {
+          geoCache.current = await getGeoByIP()
+        }
       }
       const geo = geoCache.current
 
