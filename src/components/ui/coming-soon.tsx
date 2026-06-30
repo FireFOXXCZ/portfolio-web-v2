@@ -95,6 +95,8 @@ type ComingSoonProps = {
   showBack?: boolean
   /** Custom class on the outer wrapper */
   className?: string
+  /** Compact mode — smaller spacing/sizes, hides decorative code lines, for embedding inline (e.g. homepage preview) */
+  compact?: boolean
 }
 
 // ─── Main component ───────────────────────────────────────────────────────────
@@ -105,6 +107,7 @@ export function ComingSoon({
   ctaHref = '/contact',
   showBack = true,
   className = '',
+  compact = false,
 }: ComingSoonProps) {
   const t = useTranslations('comingSoon')
   const [mounted, setMounted] = useState(false)
@@ -119,7 +122,7 @@ export function ComingSoon({
   return (
     <div
       ref={ref}
-      className={`relative min-h-[70vh] flex flex-col items-center justify-center px-6 overflow-hidden ${className}`}
+      className={`relative flex flex-col items-center justify-center px-6 overflow-hidden ${compact ? '' : 'min-h-[70vh]'} ${className}`}
     >
       <GridBackground />
       <FloatingOrbs />
@@ -131,7 +134,7 @@ export function ComingSoon({
       >
         {/* Badge */}
         <div
-          className="mb-8 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/25 bg-orange-500/[0.06] text-orange-500 text-xs font-bold uppercase tracking-widest"
+          className={`${compact ? 'mb-4' : 'mb-8'} inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-orange-500/25 bg-orange-500/[0.06] text-orange-500 text-xs font-bold uppercase tracking-widest`}
           style={{ transitionDelay: '100ms' }}
         >
           <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
@@ -139,15 +142,17 @@ export function ComingSoon({
         </div>
 
         {/* Pulsing icon */}
-        <div
-          className={`mb-6 transition-all duration-700 delay-150 ${mounted ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
-        >
-          <PulsingIcon />
-        </div>
+        {!compact && (
+          <div
+            className={`mb-6 transition-all duration-700 delay-150 ${mounted ? 'opacity-100 scale-100' : 'opacity-0 scale-90'}`}
+          >
+            <PulsingIcon />
+          </div>
+        )}
 
         {/* Eyebrow */}
         <p
-          className={`text-xs font-semibold text-orange-500 uppercase tracking-widest mb-3 transition-all duration-500 delay-200 ${
+          className={`text-xs font-semibold text-orange-500 uppercase tracking-widest ${compact ? 'mb-2' : 'mb-3'} transition-all duration-500 delay-200 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
@@ -156,7 +161,7 @@ export function ComingSoon({
 
         {/* Title */}
         <h1
-          className={`text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white tracking-tight mb-4 transition-all duration-500 delay-[250ms] ${
+          className={`${compact ? 'text-2xl md:text-3xl mb-3' : 'text-4xl md:text-5xl lg:text-6xl mb-4'} font-black text-gray-900 dark:text-white tracking-tight transition-all duration-500 delay-[250ms] ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
@@ -165,7 +170,7 @@ export function ComingSoon({
 
         {/* Subtitle */}
         <p
-          className={`text-sm md:text-base text-gray-500 dark:text-gray-400 leading-relaxed mb-3 transition-all duration-500 delay-300 ${
+          className={`text-sm md:text-base text-gray-500 dark:text-gray-400 leading-relaxed ${compact ? 'mb-0' : 'mb-3'} transition-all duration-500 delay-300 ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >
@@ -173,26 +178,30 @@ export function ComingSoon({
         </p>
 
         {/* ETA tag */}
-        <p
-          className={`text-xs text-gray-400 dark:text-gray-500 mb-10 font-medium transition-all duration-500 delay-[330ms] ${
-            mounted ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          ✦ {t('eta')} ✦
-        </p>
+        {!compact && (
+          <p
+            className={`text-xs text-gray-400 dark:text-gray-500 mb-10 font-medium transition-all duration-500 delay-[330ms] ${
+              mounted ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            ✦ {t('eta')} ✦
+          </p>
+        )}
 
         {/* Decorative code lines */}
-        <div
-          className={`mb-10 transition-all duration-500 delay-[360ms] ${
-            mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-          }`}
-        >
-          <CodeLines />
-        </div>
+        {!compact && (
+          <div
+            className={`mb-10 transition-all duration-500 delay-[360ms] ${
+              mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+            }`}
+          >
+            <CodeLines />
+          </div>
+        )}
 
         {/* CTAs */}
         <div
-          className={`flex flex-col sm:flex-row items-center gap-3 transition-all duration-500 delay-[400ms] ${
+          className={`flex flex-col sm:flex-row items-center gap-3 ${compact ? 'mt-5' : ''} transition-all duration-500 delay-[400ms] ${
             mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
         >

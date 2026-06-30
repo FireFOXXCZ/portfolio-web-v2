@@ -54,6 +54,19 @@ function useIsClient() {
   return isClient
 }
 
+// ── Years of experience (od 17 let, narozen 23. 12. 2004) ─────────────────────
+const EXPERIENCE_START_DATE = new Date(2021, 11, 23) // 23. 12. 2021
+
+function getYearsSince(startDate: Date): number {
+  const today = new Date()
+  let years = today.getFullYear() - startDate.getFullYear()
+  const hasHadAnniversaryThisYear =
+    today.getMonth() > startDate.getMonth() ||
+    (today.getMonth() === startDate.getMonth() && today.getDate() >= startDate.getDate())
+  if (!hasHadAnniversaryThisYear) years--
+  return years
+}
+
 async function downloadCv(url: string, e: React.MouseEvent) {
   e.preventDefault()
   try {
@@ -213,7 +226,7 @@ export function HeroSection({ profile, projectCount = 0 }: HeroSectionProps) {
 
   const stats = [
     { value: projectCount > 0 ? `${projectCount}+` : '10+', label: isCz ? 'Projektů' : 'Projects' },
-    { value: '3+', label: isCz ? 'Roky zkušeností' : 'Years exp.' },
+    { value: `${getYearsSince(EXPERIENCE_START_DATE)}+`, label: isCz ? 'Roky zkušeností' : 'Years exp.' },
     { value: '100%', label: isCz ? 'Vášeň pro kód' : 'Passion for code' },
   ]
 
