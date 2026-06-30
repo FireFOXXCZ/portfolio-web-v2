@@ -1,0 +1,216 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "review": "Reviews",
+    "blog": "Blog",
+    "contact": "Contact",
+    "downloadCv": "Download CV"
+  },
+  "hero": {
+    "available": "Available for projects",
+    "busy": "Currently busy",
+    "unavailable": "Unavailable",
+    "cta": "My projects",
+    "contact": "Contact me"
+  },
+  "sections": {
+    "skills": "Tech stack",
+    "projects": "Selected projects",
+    "experience": "Experience",
+    "blog": "Blog",
+    "contact": "Let's connect",
+    "allProjects": "All projects",
+    "work": "Work",
+    "noProjects": "No projects yet.",
+    "comingSoon": "Coming soon",
+    "inProgress": "In progress",
+    "archived": "Archived",
+    "skillsPreview": {
+      "eyebrow": "Technologies",
+      "title": "What I can do",
+      "allSkills": "All skills",
+      "level": "Level",
+      "yearsExperience": "{count, plural, one {# year of experience} other {# years of experience}}",
+      "levelLabels": {
+        "1": "Beginner",
+        "2": "Novice",
+        "3": "Intermediate",
+        "4": "Advanced",
+        "5": "Expert"
+      }
+    },
+    "skillsPage": {
+      "backHome": "Back to home",
+      "subtitle": "An overview of the technologies, tools and skills I work with.",
+      "searchPlaceholder": "Search skills…",
+      "filterAll": "All",
+      "countLabel": "{filtered} of {total} skills",
+      "resetFilters": "Reset filters",
+      "emptyTitle": "Nothing found",
+      "emptyDesc": "No skills match your current filter."
+    },
+    "contactCta": {
+      "eyebrow": "Let's work together",
+      "titleLine1": "Got a project?",
+      "titleLine2": "Let's build it.",
+      "subtitle": "I'm looking for interesting projects and collaborations. Reach out and let's talk about what I can do for you.",
+      "ctaPrimary": "Send a message",
+      "ctaSecondary": "hello@firefoxx.online"
+    },
+    "contactPage": {
+      "eyebrow": "Contact",
+      "title": "Let's connect",
+      "subtitle": "Got a project or idea? Drop me a message and I'll get back to you.",
+      "availability": {
+        "label": "Availability",
+        "statusLabels": {
+          "available": "Available for projects",
+          "busy": "Currently busy",
+          "unavailable": "Unavailable"
+        },
+        "descriptions": {
+          "available": "I'm currently taking on new projects and collaborations. Let's talk about what you have in mind.",
+          "busy": "I'm currently busy with other projects, but feel free to reach out — I'll get back to you when I have availability.",
+          "unavailable": "I'm not taking on new projects right now, but feel free to send a message for future opportunities."
+        }
+      },
+      "info": {
+        "title": "Info",
+        "responseTime": "Response time",
+        "responseTimeValue": "Within 24 hours",
+        "location": "Location",
+        "locationValue": "Czech Republic (remote)"
+      },
+      "testimonial": {
+        "quote": "Working with him was a great experience — fast, reliable and genuinely cares about the result.",
+        "author": "Happy client"
+      },
+      "fields": {
+        "name": "Name",
+        "namePlaceholder": "John Doe",
+        "email": "Email",
+        "emailPlaceholder": "john@email.com",
+        "subject": "Subject",
+        "subjectPlaceholder": "What's it about?",
+        "message": "Message",
+        "messagePlaceholder": "Tell me about your project…",
+        "submit": "Send message",
+        "submitting": "Sending…",
+        "replyTime": "I'll reply within 24 hours"
+      },
+      "errors": {
+        "nameRequired": "Name is required.",
+        "emailRequired": "Email is required.",
+        "emailInvalid": "Please enter a valid email.",
+        "messageRequired": "Message is required.",
+        "messageTooShort": "Message must be at least 10 characters.",
+        "submitFailed": "Failed to send message. Please try again."
+      },
+      "success": {
+        "title": "Message sent!",
+        "subtitle": "I'll get back to you as soon as possible.",
+        "delivered": "Message delivered"
+      }
+    }
+  },
+  "admin": {
+    "title": "Admin Login",
+    "emailLabel": "Email",
+    "passwordLabel": "Password",
+    "placeholderEmail": "your@email.com",
+    "buttonLogin": "Sign In",
+    "buttonLogging": "Logging in...",
+    "errorInvalid": "Invalid email or password.",
+    "errorFailed": "Login failed. Please try again.",
+    "errorUnexpected": "An unexpected error occurred."
+  },
+  "footer": {
+    "description": "I build modern web applications focused on performance, clean code and great user experience.",
+    "available": "Available for new projects",
+    "navTitle": "Navigation",
+    "contactTitle": "Contact",
+    "linkedinDesc": "Professional profile",
+    "githubDesc": "Source code",
+    "spotifyDesc": "What I'm listening to",
+    "builtWith": "Built with",
+    "madeWith": "Made with",
+    "andLots": "and lots of",
+    "yearsExp": "years of exp",
+    "projects": "projects",
+    "coffees": "coffees",
+    "getInTouch": "Get in touch",
+    "backToTop": "Back to top"
+  },
+  "about": {
+    "greeting": "HI, I'M",
+    "status": "Coding a new feature",
+    "bio": "Developer from the Czech Republic, building websites since I was 17. Focused on React, Next.js and modern frontend. Starting September 2026 I'm studying electrical engineering — but I'm not leaving code behind.",
+    "stats": {
+      "age": "years old",
+      "years": "years experience",
+      "passion": "passion for code"
+    },
+    "spotify": {
+      "nowPlaying": "Currently listening",
+      "trackPlaceholder": "Track name",
+      "artistPlaceholder": "Artist · Album",
+      "favorites": "FAVORITES"
+    },
+    "factsLabel": "FUN FACTS",
+    "factsHint": "Click a card to find out more",
+    "facts": {
+      "f1": "I've been building websites since 17 — started with HTML & CSS and was instantly fascinated that I could create things visible to the whole world",
+      "f2": "Gaming is how I recharge from coding. My best ideas come right after a gaming session",
+      "f3": "I'm most productive after midnight when it's quiet and nothing interrupts me",
+      "f4": "After leaving school I took some time off, then dove fully into improving my web dev skills. Starting in September I'm studying electrical engineering, mainly for the diploma",
+      "f5": "Personal debugging record: 6 hours over a missing semicolon. Never skipping one again",
+      "f6": "Open source is my way of giving back to the community that taught me how to code",
+      "f7": "I've also built plugins for CS 1.6 and CS2, and ran my own gaming portals hawkband.eu and gamerzpro.cz for years",
+      "f8": "I used to run a Minecraft server too, but the community eventually died out so it wasn't worth keeping it funded",
+      "f9": "For my first 6 months I learned by tearing apart other people's websites in DevTools — Inspect Element was my first textbook"
+    },
+    "timelineLabel": "JOURNEY",
+    "timelineHint": "Where I came from and where I'm headed",
+    "timeline": {
+      "t1": {
+        "title": "Born",
+        "desc": "I had no idea that one day I'd be building websites people actually use."
+      },
+      "t2": {
+        "title": "First line of code",
+        "desc": "HTML and CSS — I was instantly hooked. While others were bored, I was figuring out how to animate a button."
+      },
+      "t3": {
+        "title": "Started IT school",
+        "desc": "Enrolled in a technical IT program. JavaScript, React, my first dynamic projects."
+      },
+      "t4": {
+        "title": "Coding alongside school",
+        "desc": "Kept building my own web projects alongside my studies, getting better with every one."
+      },
+      "t5": {
+        "title": "Moving & leaving IT school",
+        "desc": "Had to leave my IT program after moving. I took some time off, then dove fully into improving my web dev skills."
+      },
+      "t6": {
+        "title": "Starting electrical engineering",
+        "desc": "Starting in September, I'm beginning an electrical engineering program, mainly for the diploma. Still coding and building websites on my own alongside it."
+      },
+      "t7": {
+        "title": "firefoxx.online",
+        "desc": "Launched my own portfolio. This website is living proof of how far I've come."
+      }
+    }
+  },
+  "comingSoon": {
+    "eyebrow": "Coming up",
+    "title": "Coming soon",
+    "subtitle": "This page is being built. In the meantime, feel free to reach out directly.",
+    "badge": "In progress",
+    "cta": "Get in touch",
+    "backHome": "Back home",
+    "eta": "Dropping soon"
+  }
+}

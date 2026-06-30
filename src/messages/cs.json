@@ -1,0 +1,216 @@
+{
+  "nav": {
+    "about": "O mně",
+    "projects": "Projekty",
+    "skills": "Dovednosti",
+    "review": "Recenze",
+    "blog": "Blog",
+    "contact": "Kontakt",
+    "downloadCv": "Stáhnout CV"
+  },
+  "hero": {
+    "available": "Dostupný pro projekty",
+    "busy": "Momentálně zaneprázdněn",
+    "unavailable": "Nedostupný",
+    "cta": "Moje projekty",
+    "contact": "Kontaktuj mě"
+  },
+  "sections": {
+    "skills": "Čím pracuji",
+    "projects": "Vybrané projekty",
+    "experience": "Zkušenosti",
+    "blog": "Blog",
+    "contact": "Pojďme se spojit",
+    "allProjects": "Všechny projekty",
+    "work": "Práce",
+    "noProjects": "Zatím žádné projekty.",
+    "comingSoon": "Brzy k dispozici",
+    "inProgress": "Probíhá",
+    "archived": "Archiv",
+    "skillsPreview": {
+      "eyebrow": "Technologie",
+      "title": "Co umím",
+      "allSkills": "Všechny dovednosti",
+      "level": "Úroveň",
+      "yearsExperience": "{count, plural, one {# rok zkušeností} few {# roky zkušeností} other {# let zkušeností}}",
+      "levelLabels": {
+        "1": "Začátečník",
+        "2": "Mírně pokročilý",
+        "3": "Pokročilý",
+        "4": "Zkušený",
+        "5": "Expert"
+      }
+    },
+    "skillsPage": {
+      "backHome": "Zpět na hlavní stránku",
+      "subtitle": "Přehled technologií, nástrojů a dovedností, se kterými pracuji.",
+      "searchPlaceholder": "Hledat dovednosti…",
+      "filterAll": "Vše",
+      "countLabel": "{filtered} z {total} dovedností",
+      "resetFilters": "Resetovat filtry",
+      "emptyTitle": "Nic nenalezeno",
+      "emptyDesc": "Žádné dovednosti neodpovídají vašemu filtru."
+    },
+    "contactCta": {
+      "eyebrow": "Spolupráce",
+      "titleLine1": "Máš projekt?",
+      "titleLine2": "Pojďme na to.",
+      "subtitle": "Hledám zajímavé projekty a spolupráce. Ozvi se a probereme, co pro tebe mohu udělat.",
+      "ctaPrimary": "Napsat zprávu",
+      "ctaSecondary": "hello@firefoxx.online"
+    },
+    "contactPage": {
+      "eyebrow": "Kontakt",
+      "title": "Pojďme se spojit",
+      "subtitle": "Máš projekt nebo nápad? Napiš mi a ozvu se.",
+      "availability": {
+        "label": "Dostupnost",
+        "statusLabels": {
+          "available": "Dostupný pro projekty",
+          "busy": "Momentálně zaneprázdněn",
+          "unavailable": "Nedostupný"
+        },
+        "descriptions": {
+          "available": "Momentálně přijímám nové projekty a spolupráce. Napiš mi, co máš na mysli.",
+          "busy": "Momentálně mám rozjeté jiné projekty, ale klidně napiš — ozvu se, jak budu mít kapacitu.",
+          "unavailable": "Aktuálně nepřijímám nové projekty, ale klidně napiš pro budoucí spolupráci."
+        }
+      },
+      "info": {
+        "title": "Info",
+        "responseTime": "Doba odezvy",
+        "responseTimeValue": "Do 24 hodin",
+        "location": "Lokace",
+        "locationValue": "Česká republika (vzdáleně)"
+      },
+      "testimonial": {
+        "quote": "Spolupráce s ním byla skvělá zkušenost — rychlý, spolehlivý a opravdu mu jde o výsledek.",
+        "author": "Spokojený klient"
+      },
+      "fields": {
+        "name": "Jméno",
+        "namePlaceholder": "Jan Novák",
+        "email": "Email",
+        "emailPlaceholder": "jan@email.cz",
+        "subject": "Předmět",
+        "subjectPlaceholder": "O čem to je?",
+        "message": "Zpráva",
+        "messagePlaceholder": "Napiš mi o svém projektu…",
+        "submit": "Odeslat zprávu",
+        "submitting": "Odesílám…",
+        "replyTime": "Odpovím do 24 hodin"
+      },
+      "errors": {
+        "nameRequired": "Jméno je povinné.",
+        "emailRequired": "Email je povinný.",
+        "emailInvalid": "Zadej platný email.",
+        "messageRequired": "Zpráva je povinná.",
+        "messageTooShort": "Zpráva musí mít alespoň 10 znaků.",
+        "submitFailed": "Zprávu se nepodařilo odeslat. Zkus to znovu."
+      },
+      "success": {
+        "title": "Zpráva odeslána!",
+        "subtitle": "Ozvu se ti co nejdřív.",
+        "delivered": "Zpráva doručena"
+      }
+    }
+  },
+  "admin": {
+    "title": "Admin přihlášení",
+    "emailLabel": "Email",
+    "passwordLabel": "Heslo",
+    "placeholderEmail": "vas@email.cz",
+    "buttonLogin": "Přihlásit se",
+    "buttonLogging": "Přihlašuji...",
+    "errorInvalid": "Nesprávný email nebo heslo.",
+    "errorFailed": "Přihlášení se nezdařilo. Zkuste to znovu.",
+    "errorUnexpected": "Nastala neočekávaná chyba."
+  },
+  "footer": {
+    "description": "Stavím moderní webové aplikace s důrazem na výkon, čistý kód a skvělý uživatelský zážitek.",
+    "available": "Dostupný pro nové projekty",
+    "navTitle": "Navigace",
+    "contactTitle": "Kontakt",
+    "linkedinDesc": "Profesní profil",
+    "githubDesc": "Zdrojové kódy",
+    "spotifyDesc": "Co teď poslouchám",
+    "builtWith": "Postaveno na",
+    "madeWith": "Vytvořeno s",
+    "andLots": "a spoustou",
+    "yearsExp": "roky zkušeností",
+    "projects": "projektů",
+    "coffees": "káv",
+    "getInTouch": "Napiš mi",
+    "backToTop": "Zpět nahoru"
+  },
+  "about": {
+    "greeting": "AHOJ, JSEM",
+    "status": "Kóduju nový feature",
+    "bio": "Vývojář z ČR, dělám weby od 17 let. Zaměřuju se na React, Next.js a moderní frontend. Od září 2026 studuji elektrotechniku — programování ale neopouštím.",
+    "stats": {
+      "age": "let",
+      "years": "roky zkušeností",
+      "passion": "vášeň pro kód"
+    },
+    "spotify": {
+      "nowPlaying": "Momentálně poslouchám",
+      "trackPlaceholder": "Název skladby",
+      "artistPlaceholder": "Interpret · Album",
+      "favorites": "OBLÍBENÉ"
+    },
+    "factsLabel": "FUN FACTS",
+    "factsHint": "Klikni na kartu a zjisti víc",
+    "facts": {
+      "f1": "Dělám weby od 17 — začínal jsem s HTML a CSS a fascinovalo mě, že mohu tvořit věci viditelné pro celý svět",
+      "f2": "Hry jsou můj způsob odpočinku od kódování. Nejlépe mi myslí po herní session",
+      "f3": "Nejproduktivnější jsem po půlnoci, když je ticho a nikdo mě nevyrušuje",
+      "f4": "Po odchodu ze školy jsem si chvíli užil volna, pak se naplno pustil do webdevu. Od září jdu na elektrotechniku — hlavně kvůli maturitě",
+      "f5": "Rekord v debugování: 6 hodin kvůli zapomenuté středníku. Od té doby ho nikdy nevynechávám",
+      "f6": "Open source je způsob jak dávám zpět komunitě, která mě naučila programovat",
+      "f7": "Psal jsem pluginy pro CS 1.6 i CS2 a roky jsem provozoval vlastní herní portály hawkband.eu a gamerzpro.cz",
+      "f8": "Měl jsem vlastní Minecraft server, ale komunita postupně vymřela — nemělo smysl ho dál dotovat",
+      "f9": "Prvních 6 měsíců jsem se učil tak, že jsem rozebíral cizí weby přes DevTools — Inspect Element byl moje první učebnice"
+    },
+    "timelineLabel": "CESTA",
+    "timelineHint": "Odkud jsem přišel a kam mířím",
+    "timeline": {
+      "t1": {
+        "title": "Narozen",
+        "desc": "Ještě jsem netušil, že jednoho dne budu stavět weby, které lidi skutečně používají."
+      },
+      "t2": {
+        "title": "První řádek kódu",
+        "desc": "HTML a CSS — okamžitě mě to pohltilo. Zatímco ostatní se nudili, já přemýšlel jak udělat tlačítko animované."
+      },
+      "t3": {
+        "title": "Začátek IT oboru",
+        "desc": "Nastoupil jsem na střední IT obor. JavaScript, React, první dynamické projekty."
+      },
+      "t4": {
+        "title": "Programování vedle školy",
+        "desc": "Pokračoval jsem ve vlastních webových projektech souběžně se studiem, furt jsem se zlepšoval."
+      },
+      "t5": {
+        "title": "Stěhování a konec IT oboru",
+        "desc": "Kvůli stěhování jsem nedokončil IT obor. Po škole jsem si chvíli užíval volna a pak se naplno pustil do zlepšování ve webdevu."
+      },
+      "t6": {
+        "title": "Start elektrotechniky",
+        "desc": "Od září nastupuju na obor elektrotechnika, hlavně kvůli maturitě. Programování a weby ale dál dělám sám jako vlastní projekt."
+      },
+      "t7": {
+        "title": "firefoxx.online",
+        "desc": "Spustil jsem vlastní portfolio. Tento web je živý důkaz toho, kam jsem se za ty roky dostal."
+      }
+    }
+  },
+  "comingSoon": {
+    "eyebrow": "Připravujeme",
+    "title": "Brzy tady",
+    "subtitle": "Tato stránka se právě připravuje. Mezitím mě klidně kontaktuj přímo.",
+    "badge": "V přípravě",
+    "cta": "Kontaktovat",
+    "backHome": "Zpět domů",
+    "eta": "Čekej brzy"
+  }
+}
